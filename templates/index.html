@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Focus Predictor</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎓 Student Focus Prediction</h1>
+
+        <form method="POST">
+            <input type="number" step="0.1" name="screen" placeholder="Screen Time (hrs)" required>
+            <input type="number" step="0.1" name="study" placeholder="Study Hours" required>
+            <input type="number" step="0.1" name="sleep" placeholder="Sleep Hours" required>
+            <input type="number" step="0.1" name="social" placeholder="Social Media (hrs)" required>
+            <input type="number" step="0.1" name="breaks" placeholder="Breaks Count" required>
+
+            <button type="submit">Predict Focus</button>
+        </form>
+
+        {% if prediction %}
+        <h2>🔍 Result: <span>{{ prediction }}</span></h2>
+        {% endif %}
+    </div>
+</body>
+</html>
